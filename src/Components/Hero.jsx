@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-            Build Your Ultimate <span className="text-brand-gradient">Dev Stack</span>
+            Build Your Ideal <span className="text-brand-gradient">Development Stack</span>
           </h1>
           <p className="mt-4 text-lg text-base-content/70">
             Discover, evaluate, and assemble modern tech stacks tailored for your next web application project.
