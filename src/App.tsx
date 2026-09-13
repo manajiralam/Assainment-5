@@ -7,9 +7,20 @@ import Footer from './Components/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+interface Technology {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  icon: string;
+  rating: number;
+  difficulty: string;
+  badge: string;
+}
+
 export default function App() {
-  const [technologies, setTechnologies] = useState([]);
-  const [stack, setStack] = useState([]);
+  const [technologies, setTechnologies] = useState<Technology[]>([]);
+  const [stack, setStack] = useState<Technology[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,7 +36,7 @@ export default function App() {
       });
   }, []);
 
-  const handleAddToStack = (tech) => {
+  const handleAddToStack = (tech: Technology) => {
     const isAlreadyAdded = stack.some((item) => item.id === tech.id);
     if (isAlreadyAdded) {
       toast.warning(`${tech.name} is already in your stack!`, { position: "top-right" });
@@ -35,7 +46,7 @@ export default function App() {
     toast.success(`${tech.name} added to stack!`, { position: "top-right" });
   };
 
-  const handleRemoveFromStack = (id) => {
+  const handleRemoveFromStack = (id: string) => {
     const itemToRemove = stack.find((item) => item.id === id);
     setStack(stack.filter((item) => item.id !== id));
     if (itemToRemove) {
