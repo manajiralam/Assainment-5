@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar'
 import Hero from './Components/Hero';
